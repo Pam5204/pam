@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en-US">
 
 <head>
@@ -8,7 +8,16 @@
         window.addEventListener("load", () => {
             console.log("loaded via javascript");
             //TODO: add any extra onload processing you may need here
+          
         });
+        
+        addEventListener("click", (a)=> {
+           let linkTittle = a.target.text;
+           updateCurrentPage(linkTittle)
+           
+
+        })
+
         function getCurrentSelection() {
             setTimeout(() => {
                 //added this delay here as some solutions may require it to update properly (i.e., click code may complete before the navigation changes)
@@ -20,6 +29,16 @@
     </script>
     <style>
         /* TODO: make edits here */
+        nav {  
+        background-color: greenyellow;
+    }
+    nav > ul {list-style: none;display:flex;justify-content: space-between;}
+    a:hover { color:aqua;}   
+    ul {list-style-type:none ;}  
+    h1, a { text-transform: capitalize;}
+    ul {list-style-type:"✓";}
+    li {color:red;}
+
     </style>
     <!-- make the necessary edits above this line -->
 
