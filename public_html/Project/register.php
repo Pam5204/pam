@@ -1,5 +1,5 @@
 <?php
-require_once(_DIR_ . "/../../lib/functions.php");
+require_once(_DIR_ . "/../../partials/nav.php");
 ?>
 <form onsubmit="return validate(this)" method="POST">
     <div>
