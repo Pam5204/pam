@@ -68,6 +68,7 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
                     if (password_verify($password, $hash)) {
                         //flash("Weclome $email");
                         $_SESSION["user"] = $user; //sets our session data from db
+
                         try {
                             //lookup potential roles
                             $stmt = $db->prepare("SELECT Roles.name FROM Roles 
@@ -84,6 +85,7 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
                         } else {
                             $_SESSION["user"]["roles"] = []; //no roles
                         }
+
                         flash("Welcome, " . get_username());
                         die(header("Location: home.php"));
                     } else {
@@ -100,6 +102,8 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
 }
 ?>
 <?php 
+
 require(__DIR__."/../../partials/flash.php");
 
     
+
