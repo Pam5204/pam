@@ -25,13 +25,8 @@ session_start();
 
 ?>
 <!-- include css and js files -->
-<<<<<<< HEAD
 <link rel="stylesheet" href="<?php echo get_url('styles.css'); ?>">
 <script src="<?php echo get_url('helpers.js'); ?>"></script>
-=======
-<link rel="stylesheet" href="styles.css">
-<script src="helpers.js"></script>
->>>>>>> 09d38254e941b144051ec21e5caab5ca1293a8b6
 <nav>
     <ul>
         <?php if (is_logged_in()) : ?>
@@ -52,3 +47,4 @@ session_start();
         <?php endif; ?>
     </ul>
 </nav>
+
