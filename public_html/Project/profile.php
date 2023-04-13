@@ -46,7 +46,6 @@ if (isset($_POST["save"])) {
         }
     }
 
-
     //check/update password
     $current_password = se($_POST, "currentPassword", null, false);
     $new_password = se($_POST, "newPassword", null, false);
@@ -143,3 +142,6 @@ $username = get_username();
 require_once(__DIR__ . "/../../partials/flash.php");
 ?>
 ?>
+
+
+        
