@@ -16,7 +16,18 @@ require(__DIR__ . "/../../partials/nav.php");
     function validate(form) {
         //TODO 1: implement JavaScript validation
         //ensure it returns false for an error and true for success
-
+        let email = form.email.value;
+        let pw = form.password.value;
+        if (email.value == null)
+        {
+            flash("Email cannot be blank" , "warning");
+            return false;
+        }
+        if(pw.lenght < 8)
+        {
+            flash("Password must be at least 8 characters long", "warning");
+            return false;
+        }
         //TODO update clientside validation to check if it should
         //valid email or username
         return true;
