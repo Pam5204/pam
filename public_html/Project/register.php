@@ -25,9 +25,34 @@ reset_session();
     function validate(form) {
         //TODO 1: implement JavaScript validation
         //ensure it returns false for an error and true for success
-
-        return true;
+        let email = form.email.value;
+        let username = form.username.value;
+        let password = form.password.value;
+        let confirm = form.confirm.value;
+        let isValid = true;
+        if (email == "")
+        {
+            flash("Email Cannot Be Blank", "warning");
+            isValid = false;
+        }
+        if (username == "")
+        {
+            flash("Username Cannot Be Blank" , "warning")
+            isValid = false;
+        }
+        if (password.value !== confirm.value)
+        {
+            flash("Password and Confirm password must match" , "warning");
+            isValid = false;
+        }
+        if (password.lenght <8)
+        {
+            flash("Password must be at least 8 characters" , "warning");
+            isValid = false;
+        }    
+        return isValid;
     }
+       
 </script>
 <?php
 //TODO 2: add PHP Code
