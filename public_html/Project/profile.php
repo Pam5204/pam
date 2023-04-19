@@ -124,18 +124,30 @@ $username = get_username();
         let con = form.confirmPassword.value;
         let isValid = true;
         //TODO add other client side validation....
-        if (pw == con)
-        {
-            flash("Password and Confirm password match", "success")
-        }
-        return invalid
         //example of using flash via javascript
         //find the flash container, create a new element, appendChild
-        if (pw !== con) {
+        if (pw !== con) 
+        {
             flash("Password and Confrim password must match", "warning");
             isValid = false;
         }
-        return isValid;
+        if (eml == "")
+        {
+            flash("Email cannot be blank");
+            isValid = false;
+        }
+        if (usrnm == " ")
+        {
+            flash("Username cannot be blank");
+            isValid = false;
+        }
+        if (pw.value.lenght < 8 || con.value.lenght < 8)
+        {
+            flash("Password must be at least 8 characters", "warning");
+            isValid = false;
+        }   
+        return isValid = false;
+        
     }
 </script>
 <?php
