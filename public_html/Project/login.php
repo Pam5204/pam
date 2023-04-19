@@ -37,7 +37,7 @@ require(__DIR__ . "/../../partials/nav.php");
         var isValidEmail = /\S+@\S+\. \S+/.test(emailOrUsername);
         if (!isValidEmail) {
             alert('Please enter a valid email address.');
-            return flase;
+            return false;
         }
 
         // If all validations pass, return true
